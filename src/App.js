@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import TodoList from './Components/TodoList';
 import TSwitcher from './Components/ThemeSwitcher';
@@ -23,7 +24,10 @@ class App extends Component {
         <ThemeContext.Provider value={this.state} >
           <TSwitcher toggleTheme={this.toggleTheme} />
           <ThemeContext.Consumer>
-            {theme => (<TodoList theme={theme} /> 
+            {theme => (
+              <ThemeProvider theme={theme}>
+                <TodoList/>               
+              </ThemeProvider>
             )}
           </ThemeContext.Consumer>
         </ ThemeContext.Provider>

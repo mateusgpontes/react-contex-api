@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyleList = styled.ul `
-    background: #333;
-    color: #FFF;
+    background: ${props => props.theme.theme.backgroud};
+    color: ${props => props.theme.theme.color};
     font-size: 18px;
 
     li {
@@ -11,9 +11,8 @@ const StyleList = styled.ul `
     }
 `;
 
-const List = (theme) => (
+const List = () => (
     <StyleList>
-        { console.log(theme) }
         <li>Leite</li>
         <li>Café</li>
         <li>Açúcar</li>
